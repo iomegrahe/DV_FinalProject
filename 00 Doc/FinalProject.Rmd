@@ -1,0 +1,132 @@
+---
+title: "CS 329E Final Project"
+author: "Jonathan Ong, E. Clarissa Anjani Gondoprawiro"
+date: "December 5, 2015"
+output: html_document
+---
+
+## First, thank you for a great semester!
+
+## Dr Cannata's Tableau Methodology:
+***To analyze a Data Source:*** <br/>
+1. Start with a green thing (usually a Measure) in non-aggregated mode and make a Boxplot <br/>
+2. Start with a green thing in aggregated mode and make a Histogram <br/>
+3. Start with 2 green things and make a Scatter plot <br/>
+4. Start with two blue things (usually Dimensions) plus a green thing and make a Crosstab <br/>
+5. Start with a blue thing and a green thing and make a Barchart <br/>
+
+## Link to our Shiny App:
+*Click Here: https://jonong.shinyapps.io/FinalProjectShiny
+
+
+## Step 1: Create histogram in Tableau
+*The histogram shows the distribution of experience levels in the data set (in years). The distribution is positively skewed with a long tail on the right. A majority of the participants had between two and nine years of experience.
+
+***Process (Tableau)*** <br/>
+1. Select exper from "measures" <br/>
+2. Click "Show Me" <br/>
+3. Select "Histogram" <br/>
+4. Enjoy result <br/>
+
+![](./histogram_finalproject.jpg)
+
+## Step 2: Create scatterplot
+
+*The visualization below shows that between the ages of 11 and 14, there is the most variability in wages. The people with the highest wages are in this range, but so are the people with the lowest wages. 
+
+***Process (Tableau)*** <br/>
+1. Drag "School" into columns <br/>
+2. Drag "Wage" into rows <br/>
+3. Drag "Occupation" into colors <br/>
+
+***Process (Shiny)*** <br/>
+1. Extract SQL query using json statement <br/>
+2. Copy and paste R code from Project 5 <br/>
+
+![](./scatterplot_finalproject.jpg)
+
+## Step 3: Create crosstab
+*What stood out in the data is the blacks were most experienced as laborers and farmers, as well as managers, officials and proprietors in the professional and related service industry and public administration industry compared to Hispanics, and other racial ethnicities including White people, Asians, and Native Americans. 
+
+***Process (Tableau)*** <br/>
+1. Drag "Industry" into columns <br/>
+2. Drag "Occupation" and "Ethnicity" into rows <br/>
+3. Drag "Experience" into text and change measure into average <br/>
+4. Create KPI called "Max Low KPI". Data type is float and current value is 7. <br/>
+5. Create KPI called "Max Median KPI". Data type is float and current value is 10. <br/>
+6. Create "Calculated KPI" with the following if statement: <br/>
+
+if AVG([Exper]) <= [Max Low KPI] then 'Low' <br/>
+elseif AVG([Exper]) <= [Max Median KPI] then 'Medium' <br/>
+else 'High' <br/>
+end <br/>
+
+7. Drag Calculated KPI to color. <br/>
+
+***Process (Shiny)*** <br/>
+1. Create code for reactive class for KPI <br/>
+2. Extract SQL query using json statement <br/>
+3. Copy and paste R code from Project 5 <br/>
+
+![](./crosstab_finalproject.jpg)
+
+
+## Step 4: Create barchart
+*The visualization below shows that higher pay in more physical jobs have a higher correlation with health problems. This could suggest that success in physical jobs takes a toll on the body.
+
+***Process (Tableau)*** <br/>
+1. Drag "Occupation" and "Health" into columns <br/>
+2. Drag "Wage" into rows and make the measure a median <br/>
+3. Drag "Health" to color <br/>
+4. Add reference line for entire table <br/>
+
+***Process (Shiny)*** <br/>
+1. Extract SQL query using json statement <br/>
+2. Copy and paste R code from Project 5 <br/>
+
+![](./bargraph_finalproject.jpg)
+
+## Step 5: Create datablend of two datasets
+*Although from 1980 to 1987, number of hours worked stay the same on average, however the wages of young males increased. 
+
+***Process (Tableau)*** <br/>
+1. Extract laborsupply.csv as a datasource </br>
+2. Go to "data", "edit relationships", "custom", and add year </br>
+2. Drag "year" and "measure names" to rows </br>
+3. Drag "measure values" to columns </br>
+
+***Process (Shiny)*** <br/>
+1. Extract SQL query using json statement <br/>
+2. Copy and paste R code from Project 5 <br/>
+
+![](./blended_finalproject.jpg)
+
+## Step 6: Create visualization for boxplot
+*The visualization shows that for industires such as transportation and business the variance of experience is much larger than industries such as mining and finance. This could suggest that there are certain careers that have a higher retention rate. 
+
+***Process (Tableau)*** <br/>
+1. Uncheck "Aggregate Measures" under "Analysis"
+2. Drag "Industry" from Dimensions into columns
+3. Drag "Exper" from Measures into rows
+4. Click "Show Me"
+5. Select Box Plot
+6. Drag "Ethn" onto color
+
+![](./boxplot_finalproject.jpg)
+
+## Step 7: Write code for ui.R
+
+***Process*** <br/>
+1. Create the navigation bar title <br/>
+2. Create tab for scatterplot and create sliders to adjust width and height<br/>
+3. Create tab for crosstab and scale for KPI, width, height, and label size. Also create a button to make crosstab appear. <br/>
+4. Create tab for barchart and scale for label size and width <br/>
+5. Create tab for datablend and create sliders to adjust width and height <br/>
+
+## Limitations
+****We recognize that there are certain limitations to our data.*** <br/>
+1. The only races that are broken out are Blacks and Hispanics. This limited our possibilities for analysis
+2. The data is dated from 1980-1987, which means it is not an accurate representation of today's labor market
+3. Geographically, the survey contains more respondents from the North, slightly skewing our data
+
+## THANK YOU ONCE AGAIN!
