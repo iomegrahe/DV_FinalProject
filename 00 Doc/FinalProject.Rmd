@@ -18,6 +18,14 @@ output: html_document
 ## Link to our Shiny App:
 *Click Here: https://jonong.shinyapps.io/FinalProjectShiny
 
+## Our Datasets:
+***Males*** <br/>
+*Dataset Males contains the data of young males and their job-related information including years of schooling, work experience, and industry between the years 1980-1987. <br/>
+
+
+***LaborSupply*** <br/>
+*Dataset LaborSupply contains job statistics such as natural log of hours worked and natural log of wage between the years 1979-1987. <br/>
+
 
 ## Step 1: Create histogram in Tableau
 *The histogram shows the distribution of experience levels in the data set (in years). The distribution is positively skewed with a long tail on the right. A majority of the participants had between two and nine years of experience.
@@ -28,7 +36,9 @@ output: html_document
 3. Select "Histogram" <br/>
 4. Enjoy result <br/>
 
+<div style="width:600px; height=600px">
 ![](./histogram_finalproject.jpg)
+</div>
 
 ## Step 2: Create scatterplot
 
@@ -102,15 +112,15 @@ end <br/>
 ![](./blended_finalproject.jpg)
 
 ## Step 6: Create visualization for boxplot
-*The visualization shows that for industires such as transportation and business the variance of experience is much larger than industries such as mining and finance. This could suggest that there are certain careers that have a higher retention rate. 
+*The visualization shows that for industries such as transportation and business the variance of experience is much larger than industries such as mining and finance. This could suggest that there are certain careers that have a higher retention rate. 
 
 ***Process (Tableau)*** <br/>
-1. Uncheck "Aggregate Measures" under "Analysis"
-2. Drag "Industry" from Dimensions into columns
-3. Drag "Exper" from Measures into rows
-4. Click "Show Me"
-5. Select Box Plot
-6. Drag "Ethn" onto color
+1. Uncheck "Aggregate Measures" under "Analysis" <br/>
+2. Drag "Industry" from Dimensions into columns <br/>
+3. Drag "Exper" from Measures into rows <br/>
+4. Click "Show Me" <br/>
+5. Select Box Plot <br/>
+6. Drag "Ethn" onto color <br/>
 
 ![](./boxplot_finalproject.jpg)
 
@@ -125,8 +135,8 @@ end <br/>
 
 ## Limitations
 ****We recognize that there are certain limitations to our data.*** <br/>
-1. The only races that are broken out are Blacks and Hispanics. This limited our possibilities for analysis
-2. The data is dated from 1980-1987, which means it is not an accurate representation of today's labor market
-3. Geographically, the survey contains more respondents from the North, slightly skewing our data
+1. The only races that are broken out are Blacks and Hispanics. This limited our possibilities for analysis </br>
+2. The data is dated from 1980-1987, which means it is not an accurate representation of today's labor market </br>
+3. Geographically, the survey contains more respondents from the North, slightly skewing our data </br>
 
 ## THANK YOU ONCE AGAIN!
